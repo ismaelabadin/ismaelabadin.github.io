@@ -382,16 +382,26 @@ header {
 }
 
 .portfolio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+.li-lastchild {
+    flex-grow: 10;
 }
 
 .portfolio__item {
-    background: var(--clr-accent);
+    height: 40vh;
+    flex-grow: 1;
     overflow: hidden;
 }
 
 .portfolio__img {
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;    
     transition: 
         transform 750ms cubic-bezier(0.5, 0, 0.5, 1),
         opacity 250ms linear;
