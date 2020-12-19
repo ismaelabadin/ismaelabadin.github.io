@@ -12,6 +12,8 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" 
             integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" 
             crossorigin="anonymous" /> 
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
         
         <!-- Update these with your own fonts -->
         <link 
@@ -22,48 +24,47 @@
     </head>
 
     <body>
-        <header>
-            <div class="logo">
-                <img src="img/logo.png" alt="">
+        <div class="portfolio-page">
+            <header>
+                <div class="logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="../index.html" class="nav__link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../index.html#services" class="nav__link">My Services</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../index.html#about" class="nav__link">About me</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../index.html#work" class="nav__link">My Work</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            
+            <section class="intro">
+                <h1 class="section__title section__title--intro">
+                    <strong>Simple Shell</strong>
+                </h1>
+                <p class="section__subtitle section__subtitle--intro">
+                    Tech Stack: 
+                </p>
+                <img src="../img/shell.png" alt="Terminal icon" class="intro__img">
+            </section>
+
+            <div class="portfolio-item-individual">
+                <p></p>
             </div>
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="../index.html" class="nav__link">Home</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="../index.html#services" class="nav__link">My Services</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="../index.html#about" class="nav__link">About me</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="../index.html#work" class="nav__link">My Work</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-
-        <section class="intro">
-            <h1 class="section__title section__title--intro">
-                <strong>Simple Shell</strong>
-            </h1>
-            <p class="section__subtitle section__subtitle--intro">
-                A short subtitle
-            </p>
-            <img src="../img/shell.png" alt="project01" class="intro__img">
-        </section>
-
-        <div class="portfolio-item-individual">
-            <p></p>
-            <img src="../img/portfolio-details.jpg" alt="">
-            <p></p>
-            <p></p>
         </div>
-
 
         <!-- Footer -->
         <footer class="footer">
