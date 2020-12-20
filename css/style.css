@@ -480,6 +480,13 @@ header {
     margin-right: auto;
 }
 
+.portfolio-item-individual img {
+    max-width: 600px;
+    box-shadow: var(--bs);
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .portfolio-page {
     background-color: hsl(174, 90%, 89%);
 }

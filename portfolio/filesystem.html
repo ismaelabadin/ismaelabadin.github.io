@@ -56,13 +56,22 @@
                     <strong>Filesystem</strong>
                 </h1>
                 <p class="section__subtitle section__subtitle--intro">
-                    Tech Stack: 
+                    Tech Stack: <i class="devicon-c-plain colored"></i> <i class="devicon-ubuntu-plain-wordmark"></i>
                 </p>
                 <img src="../img/filesystem.png" alt="Virtual filesystem mockup" class="intro__img">
             </section>
 
             <div class="portfolio-item-individual">
-                <p></p>
+                <p>The goal of this project was to implement an entire FAT (File Allocation Table)-based filesystem on top of a
+                virtual disk and its software stack. The virtual disk is split into blocks, the first of which is the block API.
+                The block API is used in opening and closing virtual disk files, counting the number of blocks in a disk file, and
+                reading/writing blocks from/to disks. The filesystem layer is above the block API, and is in charge of mounting a
+                filesystem on an open disk, unmounting a filesystem and closing the underlying virtual disk, creating, deleting,
+                opening, and closing files, and reading/writing from/to files.</p>
+                <img src="../img/fs-diagram.png" alt="Diagram of real-life filesystem structure">
+                <p>Here, we can see a high-level diagram of a typical filesystem's software layers, from the disk level through
+                the block and filesystem APIs, all the way to user-space applications. If you would like to see the nitty gritty
+                details of my implementation, please contact me at my email below!</p>
             </div>
         </div>
 
