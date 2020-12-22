@@ -65,6 +65,16 @@ strong {font-weight: var(--fw-bold)}
     outline-offset: 3px;
 }
 
+pre {
+    background: #f0f0f0;
+    max-width: 800px;
+    max-height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
 /* Button */
 .btn {
     display: inline-block;
@@ -103,6 +113,7 @@ h3 {font-size: var(--fs-h3)}
 
 .section__title--intro {
     font-weight: regular;
+    min-width: 500px;
 }
 
 .section__title--intro strong {
@@ -252,7 +263,7 @@ header {
 }
 
 .section__subtitle--intro i {
-    font-size: 30px;
+    font-size: 35px;
 }
 
 @media (min-width: 600px) {
@@ -489,4 +500,9 @@ header {
 
 .portfolio-page {
     background-color: hsl(174, 90%, 89%);
+}
+
+.highlight p {
+    color: #888888;
+    margin: 0 0.5em;
 }

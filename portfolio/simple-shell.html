@@ -56,13 +56,36 @@
                     <strong>Simple Shell</strong>
                 </h1>
                 <p class="section__subtitle section__subtitle--intro">
-                    Tech Stack: 
+                    <i class="devicon-c-plain colored"></i> 
+                    <i class="devicon-ubuntu-plain-wordmark"></i>
                 </p>
                 <img src="../img/shell.png" alt="Terminal icon" class="intro__img">
             </section>
 
             <div class="portfolio-item-individual">
-                <p></p>
+                <p>The goal of this project was to implement a simple Unix shell, which would provide the following set of core
+                features: execution of user-supplied commands with optional arguments, selection of typical built-in commands,
+                redirection of the standard output of commands to files, composition of commands via piping, redirection of the
+                standard error of commands to files or pipes, and a directory stack. The shell must spawn a prompt when it is
+                ready to accept user input, as such:</p>
+                <div class="highlight">
+                    <pre>
+                        <p>sshell$ echo Hello world <br>Hello world<br>+ completed 'echo Hello world' [0]<br>sshell$</p>
+                    </pre>
+                </div>
+                <p>The shell also supports output redirection and piping, using the meta-characters ">" and "|". Here are some
+                examples of the shell in action:</p>
+                <div class="highlight">
+                    <pre>
+                        <p>sshell$ echo Hello world&gt;file <br>+ completed 'echo Hello world&gt;file' [0] <br>sshell$ cat file <br>Hello world <br>+ completed 'cat file' [0] <br>sshell$</p>
+                    </pre>
+                </div>
+                <div class="highlight">
+                    <pre>
+                        <p>sshell$ echo Hello world | grep Hello|wc -l <br>1 <br>+ completed 'echo Hello world | grep Hello|wc -l' [0][0][0] <br>sshell$</p>
+                    </pre>
+                </div>
+                <p>If you would like to see the nitty gritty details of my implementation, please contact me at my email below!</p>
             </div>
         </div>
 
