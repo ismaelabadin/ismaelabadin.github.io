@@ -64,7 +64,7 @@
                     <i class="devicon-redis-plain-wordmark"></i>
                     <i class="devicon-tomcat-line-wordmark"></i>
                     <i class="devicon-bootstrap-plain-wordmark"></i>
-                    <i class="devicon-gradle-plain-wordmark"></i>
+                    <i class="devicon-apache-plain-wordmark"></i>
                 </p>
                 <img src="../img/map-marker.png" alt="Map with coordinate markers" class="intro__img">
             </section>
@@ -72,8 +72,23 @@
             <div class="portfolio-item-individual">
                 <p>In this project, I developed a Java web app with Java Server Pages (JSP), which allowed me to use HTML, CSS,
                 and JavaScript to build the website itself, while invoking Java code to run in the backend. The primary function
-                of the app was to allow students to create events at specific coordinates on an interactive map such that other
-                nearby students could meet up and study, hence the name StudyUp. I used </p>
+                of the app was to allow students to create events at specific coordinates on an interactive map, such that other
+                nearby students could meet up and study, hence the name StudyUp. The actual implementation of the app was
+                straightforward: I created Event (ID, name, location, student list, date), Location (latitude, longitude), and
+                Student (ID, name, email) entities, and then implemented services related to creating/deleting Events and Students
+                using Jedis as my data store.
+                </p>
+                <p>I used several libraries to create the app, such as Bootstrap for the overall design, and OpenLayers for the
+                map. I imported most of the libraries I needed as WebJars via Maven. I used Apache Tomcat as my server, Apache
+                Maven as my build automation tool, and Jedis as my backend. Since Travis CI is integrated with GitHub, I used that
+                as my integration tool. In my .travis.yml file, I told Travis to clean, run SpotBugs (a Maven plug-in for static
+                code analysis), and then install. After the build passes succesfully, it executes the commands. Then, I bundled
+                the project into a Docker container so that it could communicate with a Redis container through a reverse proxy
+                (Nginx), and ran it all through a Google Cloud Console f1-micro instance. I used docker-compose to run my StudyUp
+                and Redis images in the same network, and the Nginx image would pretend to be a database by forwarding requests
+                according to its .conf file. If you would like to take a look at my code, it is available <a
+                href="https://github.com/ismaelabadin/StudyUp">here</a>.
+                </p>
             </div>
         </div>
 

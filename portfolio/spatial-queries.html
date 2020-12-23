@@ -21,6 +21,8 @@
             rel="stylesheet">
         
         <link rel="stylesheet" href="../css/style.css">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  
     </head>
 
     <body>
@@ -56,13 +58,54 @@
                     <strong>Geospatial Queries</strong>
                 </h1>
                 <p class="section__subtitle section__subtitle--intro">
-                    Tech Stack: 
+                    <i class="devicon-scala-plain-wordmark"></i>
+                    <i class="devicon-ubuntu-plain-wordmark"></i>
+                    <i class="devicon-github-original-wordmark"></i>
                 </p>
-                <img src="../img/geospatial.png" alt="Geospatial big data graphic" class="intro__img">
+                <img src="../img/apache-spark.jpg" alt="Apache Spark logo" class="intro__img">
             </section>
 
             <div class="portfolio-item-individual">
-                <p></p>
+                <p>A major peer-to-peer taxicab firm hired our team to develop and run multiple spatial queries on their large
+                database, which contained geographic and real-time location data of their customers. Unlike regular data, spatial
+                data is very tied to the physical space—the data represents a very specific location on Earth. Spatial data is
+                necessarily multi-dimensional and is represented by complex geometrical shapes, which in turn necessitates the use
+                of points, lines, and polygons in our spatial queries. Our client requested that we use SparkSQL, Apache Spark’s
+                big data software module, to extract data from their large, unstructured database that they could then use for
+                day-to- day and long-term decisions. SparkSQL allows for seamless integration of Structured Query Language (SQL)
+                queries with Spark programs, and is usable with multiple high-level programming languages, including Java, Scala,
+                and Python. We chose to use Scala in our implementation. </p>
+                <p>Our product was developed in two phases. In both phases, a rectangle R represents a physical geographic
+                boundary in real-life, and a point P represents a customer who requests the use of a taxicab using the firm’s
+                app. In the first phase, we designed and implemented functions ‘ST_Contains’ and ‘ST_Within’ in SparkSQL and used
+                them to run four spatial queries. In the second phase, we performed hotzone analysis, where we determine the
+                number of points located in each rectangle to discern the hottest geographic zones, and hotcell analysis, where we
+                apply spatial statistics in the form of the Getis-Ord calculation to spatio-temporal big data to identify
+                statistically significant geographic hotspots.</p>
+                <p>We used ‘ST_Contains’ to perform two spatial queries: Range Query (given a query rectangle R and a set of
+                points P, find all points within R) and Range Join Query (given a set of rectangles R and a set of points P, find
+                all (point, rectangle) pairs such that the point is within the rectangle). We used ‘ST_Within’ to perform two
+                spatial queries: Distance Query (given a fixed-point location P and distance D, find all points that lie within a
+                distance D from point P) and Distance Join Query (given two sets of points \(P_1\) and \(P_2\), and a distance D,
+                find all \((p_1, p_2)\) pairs such that \(p_1\) is within a distance D from \(p_2\), \(p_1\) belongs to \(P_1\),
+                and \(p_2\) belongs to \(P_2\)).</p>
+                <p>The hotzone analysis used a rectangle dataset and a point dataset. For each rectangle, the number of points
+                located within the rectangle will be obtained. The more points a rectangle contains, the hotter (and more
+                profitable) it will be. The task will need to perform a range join on the two datasets. The input point data can
+                be any small subset of NYC taxi dataset, which contains the pickup points of trips. The output is all zones with
+                their respective trip counts, sorted in ascending order.</p>
+                <p>The hotcell analysis identifies the 50 most significant hotspots in a given geographic envelope using the
+                Getis-Ord \(G_i^*\) statistic. The statistic is defined as follows:</p>
+                $$G_i^* = \frac{\displaystyle\sum_{j=1}^{n} w_{i,j}x_j - \bar{X}\displaystyle\sum_{j=1}^{n}
+                w_{i,j}}{S\sqrt{\frac{n\displaystyle\sum_{j=1}^{n}w_{i,j}^{2}-(\displaystyle\sum_{j=1}^{n}w_{i,j})^{2}}{n-1}}}$$
+                <p>where \(x_j\) is the attribute value for cell \(j\), \(w_{i,j}\) is the spatial weight between cells \(i\) and
+                \(j\), \(n\) is equal to the number of cells, and:</p>
+                $$\bar{X} = \frac{\displaystyle\sum_{j=1}^{n}x_j}{n}$$
+                $$S = \sqrt{\frac{\displaystyle\sum_{j=1}^{n}x_{j}^{2}}{n} - \bar{X}^2}$$
+                <p>The output of the \(G_i^*\) statistic is a z-score, and the higher z-scores represent the hotter cells. The
+                input is a dataset of New York City Yellow Taxi trip records. The output is the 50 most significant geographic
+                hotspots. If you would like to see the nitty gritty details of my implementation, please contact me at my email
+                below!</p>
             </div>
         </div>
 
@@ -90,7 +133,7 @@
             </ul>
         </footer>
 
-        <script src="../js/index.js"></script>
+        <script src="../js/index.js"></script> 
     </body>
 
 </html>

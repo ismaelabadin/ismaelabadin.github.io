@@ -262,6 +262,10 @@ header {
     display: inline-block;
 }
 
+.section__subtitle--intro img {
+    max-width: 20px;
+}
+
 .section__subtitle--intro i {
     font-size: 35px;
 }
