@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DevIsmael Portfolio Website</title>
+        <title>Todo App</title>
         <link 
             rel="stylesheet" 
             href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
@@ -64,7 +64,23 @@
             </section>
 
             <div class="portfolio-item-individual">
-                <p>STILL UNDER CONSTRUCTION
+                <p>
+                    In this project, I built an animated todo app using three stateful class components, as well as the
+                    react-transition-group and uuid packages, for various animations and keys, respectively. The app renders a
+                    TodoList component, which in turn renders the NewTodoForm and Todo components. The TodoList component, as the name
+                    suggests, holds the list of todos in state and also possesses the CRUD functionality of the app, with functions
+                    for adding, removing, updating, or toggling todos. The NewTodoForm component was simply a form with a single input
+                    element alongside a button, where the user could add a new task to their list of todos. The Todo component was
+                    responsible for displaying an individual todo alongside Font Awesome icons for editing or deleting the task, as
+                    well as calling the methods passed down as props from TodoList when removing, toggling, or updating a todo.
+                </p>
+                <img src="../img/todo-app.png" alt="App display" />
+                <p>
+                    After completing the app, I realized that it was essentially useless, as I hadn't included any sort of storage
+                    functionality. The tasks would simply disappear if the page was refreshed. So, I updated the app to use
+                    localStorage in order to preserve tasks across time. The app is available for use <a
+                    href="https://ismaelabadin.github.io/todo-app/">here</a>, and the code is available for inspection <a
+                    href="https://github.com/ismaelabadin/todo-app/tree/master">here</a>.
                 </p>
             </div>
         </div>

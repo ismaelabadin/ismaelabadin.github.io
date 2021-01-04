@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DevIsmael Portfolio Website</title>
+        <title>Color Palette</title>
         <link 
             rel="stylesheet" 
             href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
@@ -64,9 +64,43 @@
             </section>
 
             <div class="portfolio-item-individual">
-                <p>STILL IN CONSTRUCTION. In this project, I used Material UI, Chroma.js, Emoji-Mart, React Sortable HOC, react-copy-to-clipboard, pure
-                components, react-form-validation-core, transition group, and JSS. 
+                <p>In this project, I built and styled a color palette app that allows the user to create and delete palettes, as
+                well as click-to-copy functionality that allows the user to copy a color's code in hex, rgb, or rgba format to be
+                used in other apps. In addition, the user can adjust the shade of a color before copying the code, and can reorder
+                the color boxes while creating a new palette.  
                 </p>
+                <img src="../img/cp-home.png" alt="Home screen of app" />
+                <p>Above, we can see the homepage of the app, which renders the PaletteList component. As the name suggests, it
+                is a list of palettes that have been saved in localStorage. Each MiniPalette component on the screen has a delete
+                icon in the top right, which when clicked will trigger a modal, to make sure it wasn't deleted on accident.</p>
+                <img src="../img/cp-new.png" alt="Creating a new palette" />
+                <p>Above, we can see a single palette, with each color in the palette displayed with their respective levels. A
+                user can click anywhere in each ColorBox to copy the color code, or can click on the More button to see all levels
+                of the color, from 100 to 900. They can adjust the levels of all 20 ColorBox components using the slider in the
+                Navbar, and can change from hex to rgb or rgba format using the dropdown. In the footer, we can see the palette
+                name and emoji.</p>
+                <p>This was by far the most complex React app I have built so far, with 15 components (both functional and class)
+                in use. I also made use of the following packages and libraries: 
+                <ul>
+                    <li>react-copy-to-clipboard: for the click-to-copy functionality</li>
+                    <li>chroma-js: for dealing with the color scales and luminosity of a color</li>
+                    <li>rc-slider: for the slider in the Navbar component to change the level of a color</li>
+                    <li>react-router-dom: for creating the different "pages" of the app</li>
+                    <li>react-color: for the chrome color picker component in NewPaletteForm</li>
+                    <li>react-sortable-hoc: for implementing the drag-and-drop functionality while creating a new palette</li>
+                    <li>emoji-mart: for the user to select an emoji to represent a specific palette</li>
+                    <li>react-transition-group: for the fading transition between "pages"</li>
+                    <li>material-ui: for JSS styling, dropdowns, snackbars, drawers, icons, form validation, modals, and
+                    dialogs</li>
+                </ul>
+                </p>
+                <p>I also made the app responsive to screen resizing, by using dynamic media queries to define how the page and
+                the elements on it should change. This is how creating a palette looks like on a small screen (although I'm not
+                sure why you'd ever want to do that):</p>
+                <img src="../img/cp-ss.png" alt="Small screen version of app" />
+                <p>The app is available for use <a
+                    href="https://ismaelabadin.github.io/color-palette/">here</a>, and the code is available for inspection <a
+                    href="https://github.com/ismaelabadin/color-palette/tree/master">here</a>.</p>
             </div>
         </div>
 
